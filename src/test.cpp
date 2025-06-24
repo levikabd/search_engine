@@ -1,4 +1,5 @@
-
+#include <search.h>
+#include <gtest/gtest.h>
 
 TEST(sample_test_case, sample_test)
 {
@@ -7,8 +8,7 @@ TEST(sample_test_case, sample_test)
 
 using namespace std;
 
-void TestInvertedIndexFunctionality(const vector<string>& docs,
-const std::vector<string>& requests,const std::vector<vector<Entry>>& expected) 
+void TestInvertedIndexFunctionality(const vector<string>& docs, const std::vector<string>& requests, const std::vector<vector<Entry>>& expected) 
 {
     std::vector<std::vector<Entry>> result;
     InvertedIndex idx;
@@ -19,6 +19,7 @@ const std::vector<string>& requests,const std::vector<vector<Entry>>& expected)
     }
     ASSERT_EQ(result, expected);
 }
+
 TEST(TestCaseInvertedIndex, TestBasic) {
 const vector<string> docs = {
 "london is the capital of great britain",

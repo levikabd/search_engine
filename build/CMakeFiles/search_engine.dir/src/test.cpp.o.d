@@ -1,6 +1,7 @@
-CMakeFiles/search_engine.dir/src/main.cpp.o: \
-  /home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/iostream \
+CMakeFiles/search_engine.dir/src/test.cpp.o: \
+  /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp \
+  /home/lev/yadi/DEVEL/41_SearchEngine/include/search.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/string \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/c++config.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
   /usr/include/features.h /usr/include/features-time64.h \
@@ -12,11 +13,9 @@ CMakeFiles/search_engine.dir/src/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/pstl/pstl_config.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ostream \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ios \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/iosfwd \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stringfwd.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/memoryfwd.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/char_traits.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/postypes.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cwchar \
   /usr/include/wchar.h \
@@ -37,23 +36,7 @@ CMakeFiles/search_engine.dir/src/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/exception \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/exception.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/exception_ptr.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/exception_defines.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/cxxabi_init_exception.h \
-  /usr/lib/llvm-19/lib/clang/19/include/__stddef_header_macro.h \
-  /usr/lib/llvm-19/lib/clang/19/include/__stddef_ptrdiff_t.h \
-  /usr/lib/llvm-19/lib/clang/19/include/__stddef_nullptr_t.h \
-  /usr/lib/llvm-19/lib/clang/19/include/__stddef_max_align_t.h \
-  /usr/lib/llvm-19/lib/clang/19/include/__stddef_offsetof.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/typeinfo \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/hash_bytes.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/new \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/move.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/type_traits \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/nested_exception.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/char_traits.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cstdint \
   /usr/lib/llvm-19/lib/clang/19/include/stdint.h /usr/include/stdint.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -61,50 +44,23 @@ CMakeFiles/search_engine.dir/src/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/allocator.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/c++allocator.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/new_allocator.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/new \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/exception.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/functexcept.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/exception_defines.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/move.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/cpp_type_traits.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/localefwd.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/c++locale.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/clocale \
   /usr/include/locale.h /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/iosfwd \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cctype \
   /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endianness.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ios_base.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/atomicity.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/gthr.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/sched.h \
-  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/x86_64-linux-gnu/bits/sched.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
-  /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
-  /usr/include/x86_64-linux-gnu/bits/time.h \
-  /usr/include/x86_64-linux-gnu/bits/timex.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
-  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
-  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
-  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
-  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
-  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
-  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
-  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/atomic_word.h \
-  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_classes.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/string \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/allocator.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/c++allocator.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/new_allocator.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/functexcept.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/cpp_type_traits.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ostream_insert.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/cxxabi_forced.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_iterator_base_types.h \
@@ -132,17 +88,31 @@ CMakeFiles/search_engine.dir/src/main.cpp.o: \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_construct.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/string_view \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/functional_hash.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/hash_bytes.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/string_view.tcc \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/string_conversions.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cstdlib \
   /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
-  /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/endian.h \
-  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/endian.h /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/std_abs.h \
@@ -160,6 +130,59 @@ CMakeFiles/search_engine.dir/src/main.cpp.o: \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/charconv.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/basic_string.tcc \
+  /usr/include/gtest/gtest.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cstddef \
+  /usr/lib/llvm-19/lib/clang/19/include/__stddef_header_macro.h \
+  /usr/lib/llvm-19/lib/clang/19/include/__stddef_ptrdiff_t.h \
+  /usr/lib/llvm-19/lib/clang/19/include/__stddef_nullptr_t.h \
+  /usr/lib/llvm-19/lib/clang/19/include/__stddef_max_align_t.h \
+  /usr/lib/llvm-19/lib/clang/19/include/__stddef_offsetof.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/limits \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/memory \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_uninitialized.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_tempbuf.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_raw_storage_iter.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/align.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bit \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/uses_allocator.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/unique_ptr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tuple \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/shared_ptr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/shared_ptr_base.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/typeinfo \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/allocated_ptr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/aligned_buffer.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/atomicity.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/gthr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/gthr-default.h \
+  /usr/include/pthread.h /usr/include/sched.h \
+  /usr/include/x86_64-linux-gnu/bits/sched.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/timex.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/concurrence.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/exception \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/exception_ptr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/cxxabi_init_exception.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/nested_exception.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/shared_ptr_atomic.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/atomic_base.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/atomic_lockfree_defines.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/backward/auto_ptr.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/pstl/glue_memory_defs.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/pstl/execution_defs.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ostream \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ios \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ios_base.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_classes.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_classes.tcc \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/system_error \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/x86_64-linux-gnu/c++/12/bits/error_constants.h \
@@ -177,47 +200,20 @@ CMakeFiles/search_engine.dir/src/main.cpp.o: \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_facets.tcc \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/basic_ios.tcc \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/ostream.tcc \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/istream \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/istream.tcc \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/vector \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_uninitialized.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_vector.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_bvector.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/vector.tcc \
-  /home/lev/yadi/DEVEL/41_SearchEngine/include/converterjson.h \
-  /home/lev/yadi/DEVEL/41_SearchEngine/include/help.h \
-  /home/lev/yadi/DEVEL/41_SearchEngine/include/readsettings.h \
-  /home/lev/yadi/DEVEL/41_SearchEngine/include/search.h \
-  /home/lev/yadi/DEVEL/41_SearchEngine/include/test.h \
-  /usr/include/gtest/gtest.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/cstddef \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/limits \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/memory \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_tempbuf.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/stl_raw_storage_iter.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/align.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bit \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/uses_allocator.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/unique_ptr.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/tuple \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/shared_ptr.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/shared_ptr_base.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/allocated_ptr.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/aligned_buffer.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ext/concurrence.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/shared_ptr_atomic.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/atomic_base.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/atomic_lockfree_defines.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/backward/auto_ptr.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/pstl/glue_memory_defs.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/pstl/execution_defs.h \
   /usr/include/gtest/gtest-assertion-result.h \
   /usr/include/gtest/gtest-message.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/sstream \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/istream \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/istream.tcc \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/sstream.tcc \
   /usr/include/gtest/internal/gtest-port.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/stdlib.h \
   /usr/include/string.h /usr/include/strings.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/iostream \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/locale \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/bits/locale_facets_nonio.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/../../../../include/c++/12/ctime \
