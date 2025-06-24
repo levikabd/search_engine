@@ -25,7 +25,7 @@ add_subdirectory(nlohmann_json)
 #URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
 #)
 
-add_executable(search_engine src/main.cpp src/help.cpp src/readsettings.cpp src/search.cpp ${MY_INCLUDE_DIR}/help.h  ${MY_INCLUDE_DIR}/converterjson.h  ${MY_INCLUDE_DIR}/readsettings.h ${MY_INCLUDE_DIR}/search.h)
+add_executable(search_engine src/main.cpp src/help.cpp src/readsettings.cpp src/search.cpp src/test.cpp ${MY_INCLUDE_DIR}/help.h  ${MY_INCLUDE_DIR}/converterjson.h  ${MY_INCLUDE_DIR}/readsettings.h ${MY_INCLUDE_DIR}/search.h ${MY_INCLUDE_DIR}/test.h)
 
 target_link_libraries(search_engine PRIVATE nlohmann_json::nlohmann_json gtest gtest_main)
 #target_link_libraries(search_engine GTest::gtest_main)

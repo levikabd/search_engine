@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp" "CMakeFiles/search_engine.dir/src/main.cpp.o" "gcc" "CMakeFiles/search_engine.dir/src/main.cpp.o.d"
   "/home/lev/yadi/DEVEL/41_SearchEngine/src/readsettings.cpp" "CMakeFiles/search_engine.dir/src/readsettings.cpp.o" "gcc" "CMakeFiles/search_engine.dir/src/readsettings.cpp.o.d"
   "/home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp" "CMakeFiles/search_engine.dir/src/search.cpp.o" "gcc" "CMakeFiles/search_engine.dir/src/search.cpp.o.d"
+  "/home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp" "CMakeFiles/search_engine.dir/src/test.cpp.o" "gcc" "CMakeFiles/search_engine.dir/src/test.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -18,5 +18,10 @@
   "directory": "/home/lev/yadi/DEVEL/41_SearchEngine/build",
   "command": "/usr/bin/clang++-19  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/search.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp",
   "file": "/home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp"
+},
+{
+  "directory": "/home/lev/yadi/DEVEL/41_SearchEngine/build",
+  "command": "/usr/bin/clang++-19  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/test.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp",
+  "file": "/home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp"
 }
 ]

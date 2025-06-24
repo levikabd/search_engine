@@ -305,6 +305,9 @@ FETCHCONTENT_QUIET:BOOL=ON
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
+//Path to a program.
+GITCOMMAND:FILEPATH=/usr/bin/git
+
 //Use Abseil and RE2. Requires Abseil and RE2 to be separately
 // added to the build.
 GTEST_HAS_ABSL:BOOL=OFF
@@ -624,6 +627,8 @@ DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
 FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/usr/bin/python3][cfound components: Interpreter ][v3.11.2()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//ADVANCED property for variable: GITCOMMAND
+GITCOMMAND-ADVANCED:INTERNAL=1
 //Build the unit tests when BUILD_TESTING is enabled.
 JSON_BuildTests:INTERNAL=OFF
 //ADVANCED property for variable: MAKECOMMAND

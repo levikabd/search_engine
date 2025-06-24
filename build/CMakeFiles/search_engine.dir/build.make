@@ -125,12 +125,27 @@ CMakeFiles/search_engine.dir/src/search.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/search_engine.dir/src/search.cpp.s"
 	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp -o CMakeFiles/search_engine.dir/src/search.cpp.s
 
+CMakeFiles/search_engine.dir/src/test.cpp.o: CMakeFiles/search_engine.dir/flags.make
+CMakeFiles/search_engine.dir/src/test.cpp.o: /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp
+CMakeFiles/search_engine.dir/src/test.cpp.o: CMakeFiles/search_engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lev/yadi/DEVEL/41_SearchEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/search_engine.dir/src/test.cpp.o"
+	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/search_engine.dir/src/test.cpp.o -MF CMakeFiles/search_engine.dir/src/test.cpp.o.d -o CMakeFiles/search_engine.dir/src/test.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp
+
+CMakeFiles/search_engine.dir/src/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/search_engine.dir/src/test.cpp.i"
+	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp > CMakeFiles/search_engine.dir/src/test.cpp.i
+
+CMakeFiles/search_engine.dir/src/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/search_engine.dir/src/test.cpp.s"
+	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp -o CMakeFiles/search_engine.dir/src/test.cpp.s
+
 # Object files for target search_engine
 search_engine_OBJECTS = \
 "CMakeFiles/search_engine.dir/src/main.cpp.o" \
 "CMakeFiles/search_engine.dir/src/help.cpp.o" \
 "CMakeFiles/search_engine.dir/src/readsettings.cpp.o" \
-"CMakeFiles/search_engine.dir/src/search.cpp.o"
+"CMakeFiles/search_engine.dir/src/search.cpp.o" \
+"CMakeFiles/search_engine.dir/src/test.cpp.o"
 
 # External object files for target search_engine
 search_engine_EXTERNAL_OBJECTS =
@@ -139,9 +154,10 @@ search_engine: CMakeFiles/search_engine.dir/src/main.cpp.o
 search_engine: CMakeFiles/search_engine.dir/src/help.cpp.o
 search_engine: CMakeFiles/search_engine.dir/src/readsettings.cpp.o
 search_engine: CMakeFiles/search_engine.dir/src/search.cpp.o
+search_engine: CMakeFiles/search_engine.dir/src/test.cpp.o
 search_engine: CMakeFiles/search_engine.dir/build.make
 search_engine: CMakeFiles/search_engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lev/yadi/DEVEL/41_SearchEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable search_engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lev/yadi/DEVEL/41_SearchEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable search_engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/search_engine.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -D TEST_TARGET=search_engine -D TEST_EXECUTABLE=/home/lev/yadi/DEVEL/41_SearchEngine/build/search_engine -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/lev/yadi/DEVEL/41_SearchEngine/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=search_engine_TESTS -D CTEST_FILE=/home/lev/yadi/DEVEL/41_SearchEngine/build/search_engine[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.25/Modules/GoogleTestAddTests.cmake
 
