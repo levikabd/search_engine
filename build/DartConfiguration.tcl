@@ -14,7 +14,7 @@ CostDataFile:
 Site: ppc
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Linux-clang++-19
+BuildName: Linux-x86_64-w64-mingw32-g++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -63,8 +63,8 @@ UpdateOptions:
 UpdateType: git
 
 # Compiler info
-Compiler: /usr/bin/clang++-19
-CompilerVersion: 19.1.4
+Compiler: /usr/bin/x86_64-w64-mingw32-g++
+CompilerVersion: 12.0.0
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 

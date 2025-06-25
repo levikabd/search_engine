@@ -1,27 +1,27 @@
 [
 {
   "directory": "/home/lev/yadi/DEVEL/41_SearchEngine/build",
-  "command": "/usr/bin/clang++-19  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/main.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/googletest/include -I/home/lev/yadi/DEVEL/41_SearchEngine/googletest -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/main.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp",
   "file": "/home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp"
 },
 {
   "directory": "/home/lev/yadi/DEVEL/41_SearchEngine/build",
-  "command": "/usr/bin/clang++-19  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/help.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/help.cpp",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/googletest/include -I/home/lev/yadi/DEVEL/41_SearchEngine/googletest -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/help.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/help.cpp",
   "file": "/home/lev/yadi/DEVEL/41_SearchEngine/src/help.cpp"
 },
 {
   "directory": "/home/lev/yadi/DEVEL/41_SearchEngine/build",
-  "command": "/usr/bin/clang++-19  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/readsettings.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/readsettings.cpp",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/googletest/include -I/home/lev/yadi/DEVEL/41_SearchEngine/googletest -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/readsettings.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/readsettings.cpp",
   "file": "/home/lev/yadi/DEVEL/41_SearchEngine/src/readsettings.cpp"
 },
 {
   "directory": "/home/lev/yadi/DEVEL/41_SearchEngine/build",
-  "command": "/usr/bin/clang++-19  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/search.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/googletest/include -I/home/lev/yadi/DEVEL/41_SearchEngine/googletest -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/search.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp",
   "file": "/home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp"
 },
 {
   "directory": "/home/lev/yadi/DEVEL/41_SearchEngine/build",
-  "command": "/usr/bin/clang++-19  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/test.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  -I/home/lev/yadi/DEVEL/41_SearchEngine/include -I/home/lev/yadi/DEVEL/41_SearchEngine/googletest/include -I/home/lev/yadi/DEVEL/41_SearchEngine/googletest -I/home/lev/yadi/DEVEL/41_SearchEngine/nlohmann_json/include -g -std=gnu++17 -o CMakeFiles/search_engine.dir/src/test.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp",
   "file": "/home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp"
 }
 ]

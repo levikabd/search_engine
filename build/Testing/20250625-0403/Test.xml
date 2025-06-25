@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Site BuildName="Linux-clang++-19"
-	BuildStamp="20250624-0541-Experimental"
+<Site BuildName="Linux-x86_64-w64-mingw32-g++"
+	BuildStamp="20250625-0403-Experimental"
 	Name="ppc"
 	Generator="ctest-3.25.1"
-	CompilerName="/usr/bin/clang++-19"
-	CompilerVersion="19.1.4"
+	CompilerName="/usr/bin/x86_64-w64-mingw32-g++"
+	CompilerVersion="12.0.0"
 	OSName="Linux"
 	Hostname="ppc"
 	OSRelease="6.1.0-31-amd64"
@@ -21,14 +21,14 @@
 	TotalVirtualMemory="15258"
 	TotalPhysicalMemory="15772"
 	LogicalProcessorsPerPhysical="1"
-	ProcessorClockFrequency="2799.94"
+	ProcessorClockFrequency="2898.41"
 	>
 	<Testing>
-		<StartDateTime>Jun 25 00:24 +07</StartDateTime>
-		<StartTestTime>1750785884</StartTestTime>
+		<StartDateTime>Jun 25 17:43 +07</StartDateTime>
+		<StartTestTime>1750848207</StartTestTime>
 		<TestList/>
-		<EndDateTime>Jun 25 00:24 +07</EndDateTime>
-		<EndTestTime>1750785884</EndTestTime>
+		<EndDateTime>Jun 25 17:43 +07</EndDateTime>
+		<EndTestTime>1750848207</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

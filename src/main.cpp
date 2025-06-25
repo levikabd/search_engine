@@ -7,8 +7,6 @@
 #include <search.h>
 #include <test.h>
 
-//void find(std::string* nameSearch, std::string* rootSearch, bool* fileOnly, std::string* mask){};
-void findFiles(std::string* nameSearch);
 
 int main(int numberPS, char** arrayPS){
 
@@ -41,7 +39,7 @@ int main(int numberPS, char** arrayPS){
         
     //find(&nameSearch, &rootSearch, &fileOnly, &mask);
 
-    findFiles(&nameSearch);
+   // findFiles(&nameSearch);
 
     return 0;
 };

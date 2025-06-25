@@ -4,6 +4,7 @@
 //#include <vector>
 //#include <map>
 
+//void find(std::string* nameSearch, std::string* rootSearch, bool* fileOnly, std::string* mask){};
 void findFiles(std::string* nameSearch);
 
 struct Entry; 

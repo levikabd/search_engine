@@ -40,6 +40,12 @@
 				"file" : 0,
 				"line" : 38,
 				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 42,
+				"parent" : 0
 			}
 		]
 	},
@@ -60,6 +66,14 @@
 				{
 					"backtrace" : 3,
 					"path" : "/home/lev/yadi/DEVEL/41_SearchEngine/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/lev/yadi/DEVEL/41_SearchEngine/googletest/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/lev/yadi/DEVEL/41_SearchEngine/googletest"
 				},
 				{
 					"backtrace" : 2,
@@ -106,11 +120,6 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "-lgtest_main",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "-lgtest",
 				"role" : "libraries"
 			}
 		],

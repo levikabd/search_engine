@@ -73,71 +73,71 @@ CMakeFiles/search_engine.dir/src/main.cpp.o: CMakeFiles/search_engine.dir/flags.
 CMakeFiles/search_engine.dir/src/main.cpp.o: /home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp
 CMakeFiles/search_engine.dir/src/main.cpp.o: CMakeFiles/search_engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lev/yadi/DEVEL/41_SearchEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/search_engine.dir/src/main.cpp.o"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/search_engine.dir/src/main.cpp.o -MF CMakeFiles/search_engine.dir/src/main.cpp.o.d -o CMakeFiles/search_engine.dir/src/main.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/search_engine.dir/src/main.cpp.o -MF CMakeFiles/search_engine.dir/src/main.cpp.o.d -o CMakeFiles/search_engine.dir/src/main.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp
 
 CMakeFiles/search_engine.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/search_engine.dir/src/main.cpp.i"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp > CMakeFiles/search_engine.dir/src/main.cpp.i
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp > CMakeFiles/search_engine.dir/src/main.cpp.i
 
 CMakeFiles/search_engine.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/search_engine.dir/src/main.cpp.s"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp -o CMakeFiles/search_engine.dir/src/main.cpp.s
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/main.cpp -o CMakeFiles/search_engine.dir/src/main.cpp.s
 
 CMakeFiles/search_engine.dir/src/help.cpp.o: CMakeFiles/search_engine.dir/flags.make
 CMakeFiles/search_engine.dir/src/help.cpp.o: /home/lev/yadi/DEVEL/41_SearchEngine/src/help.cpp
 CMakeFiles/search_engine.dir/src/help.cpp.o: CMakeFiles/search_engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lev/yadi/DEVEL/41_SearchEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/search_engine.dir/src/help.cpp.o"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/search_engine.dir/src/help.cpp.o -MF CMakeFiles/search_engine.dir/src/help.cpp.o.d -o CMakeFiles/search_engine.dir/src/help.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/help.cpp
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/search_engine.dir/src/help.cpp.o -MF CMakeFiles/search_engine.dir/src/help.cpp.o.d -o CMakeFiles/search_engine.dir/src/help.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/help.cpp
 
 CMakeFiles/search_engine.dir/src/help.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/search_engine.dir/src/help.cpp.i"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lev/yadi/DEVEL/41_SearchEngine/src/help.cpp > CMakeFiles/search_engine.dir/src/help.cpp.i
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lev/yadi/DEVEL/41_SearchEngine/src/help.cpp > CMakeFiles/search_engine.dir/src/help.cpp.i
 
 CMakeFiles/search_engine.dir/src/help.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/search_engine.dir/src/help.cpp.s"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/help.cpp -o CMakeFiles/search_engine.dir/src/help.cpp.s
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/help.cpp -o CMakeFiles/search_engine.dir/src/help.cpp.s
 
 CMakeFiles/search_engine.dir/src/readsettings.cpp.o: CMakeFiles/search_engine.dir/flags.make
 CMakeFiles/search_engine.dir/src/readsettings.cpp.o: /home/lev/yadi/DEVEL/41_SearchEngine/src/readsettings.cpp
 CMakeFiles/search_engine.dir/src/readsettings.cpp.o: CMakeFiles/search_engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lev/yadi/DEVEL/41_SearchEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/search_engine.dir/src/readsettings.cpp.o"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/search_engine.dir/src/readsettings.cpp.o -MF CMakeFiles/search_engine.dir/src/readsettings.cpp.o.d -o CMakeFiles/search_engine.dir/src/readsettings.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/readsettings.cpp
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/search_engine.dir/src/readsettings.cpp.o -MF CMakeFiles/search_engine.dir/src/readsettings.cpp.o.d -o CMakeFiles/search_engine.dir/src/readsettings.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/readsettings.cpp
 
 CMakeFiles/search_engine.dir/src/readsettings.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/search_engine.dir/src/readsettings.cpp.i"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lev/yadi/DEVEL/41_SearchEngine/src/readsettings.cpp > CMakeFiles/search_engine.dir/src/readsettings.cpp.i
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lev/yadi/DEVEL/41_SearchEngine/src/readsettings.cpp > CMakeFiles/search_engine.dir/src/readsettings.cpp.i
 
 CMakeFiles/search_engine.dir/src/readsettings.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/search_engine.dir/src/readsettings.cpp.s"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/readsettings.cpp -o CMakeFiles/search_engine.dir/src/readsettings.cpp.s
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/readsettings.cpp -o CMakeFiles/search_engine.dir/src/readsettings.cpp.s
 
 CMakeFiles/search_engine.dir/src/search.cpp.o: CMakeFiles/search_engine.dir/flags.make
 CMakeFiles/search_engine.dir/src/search.cpp.o: /home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp
 CMakeFiles/search_engine.dir/src/search.cpp.o: CMakeFiles/search_engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lev/yadi/DEVEL/41_SearchEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/search_engine.dir/src/search.cpp.o"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/search_engine.dir/src/search.cpp.o -MF CMakeFiles/search_engine.dir/src/search.cpp.o.d -o CMakeFiles/search_engine.dir/src/search.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/search_engine.dir/src/search.cpp.o -MF CMakeFiles/search_engine.dir/src/search.cpp.o.d -o CMakeFiles/search_engine.dir/src/search.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp
 
 CMakeFiles/search_engine.dir/src/search.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/search_engine.dir/src/search.cpp.i"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp > CMakeFiles/search_engine.dir/src/search.cpp.i
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp > CMakeFiles/search_engine.dir/src/search.cpp.i
 
 CMakeFiles/search_engine.dir/src/search.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/search_engine.dir/src/search.cpp.s"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp -o CMakeFiles/search_engine.dir/src/search.cpp.s
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/search.cpp -o CMakeFiles/search_engine.dir/src/search.cpp.s
 
 CMakeFiles/search_engine.dir/src/test.cpp.o: CMakeFiles/search_engine.dir/flags.make
 CMakeFiles/search_engine.dir/src/test.cpp.o: /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp
 CMakeFiles/search_engine.dir/src/test.cpp.o: CMakeFiles/search_engine.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lev/yadi/DEVEL/41_SearchEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/search_engine.dir/src/test.cpp.o"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/search_engine.dir/src/test.cpp.o -MF CMakeFiles/search_engine.dir/src/test.cpp.o.d -o CMakeFiles/search_engine.dir/src/test.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/search_engine.dir/src/test.cpp.o -MF CMakeFiles/search_engine.dir/src/test.cpp.o.d -o CMakeFiles/search_engine.dir/src/test.cpp.o -c /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp
 
 CMakeFiles/search_engine.dir/src/test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/search_engine.dir/src/test.cpp.i"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp > CMakeFiles/search_engine.dir/src/test.cpp.i
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp > CMakeFiles/search_engine.dir/src/test.cpp.i
 
 CMakeFiles/search_engine.dir/src/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/search_engine.dir/src/test.cpp.s"
-	/usr/bin/clang++-19 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp -o CMakeFiles/search_engine.dir/src/test.cpp.s
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lev/yadi/DEVEL/41_SearchEngine/src/test.cpp -o CMakeFiles/search_engine.dir/src/test.cpp.s
 
 # Object files for target search_engine
 search_engine_OBJECTS = \

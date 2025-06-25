@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.15)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -39,11 +39,13 @@ include_directories(${MY_INCLUDE_DIR})
 
 set(gtest_SOURCE_DIR ${CMAKE_SOURCE_DIR}/googletest)
 set(GOOGLETESTDIR ${gtest_SOURCE_DIR}/googletest/include)
-#include_directories(${gtest_SOURCE_DIR}/googletest/include ${gtest_SOURCE_DIR})
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 set(gtest_disable_pthreads on)
 
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
-include(CTest)
+FetchContent_MakeAvailable(googletest)
+
+#include(CTest)
 enable_testing()
