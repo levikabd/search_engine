@@ -7,6 +7,16 @@
 //     EXPECT_EQ(1, 1);
 // }
 
+struct Entry
+{
+    size_t doc_id, count;
+    // Данный оператор необходим для проведения тестовых сценариев
+    bool operator ==(const Entry& other) const 
+    {
+        return (doc_id == other.doc_id && count == other.count);
+    }
+};
+
 using namespace std;
 
 void TestInvertedIndexFunctionality(const vector<string>& docs, const std::vector<string>& requests, const std::vector<vector<Entry>>& expected) 

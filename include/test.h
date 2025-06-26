@@ -1,7 +1,7 @@
 #pragma once
 
-
-//#include <search.h>
+#include <vector>
+#include <search.h>
 //#include <gtest/gtest.h>
 
 // TEST(sample_test_case, sample_test)
@@ -11,7 +11,7 @@
 
 using namespace std;
 
-struct Entry;
+//struct Entry;
 
 void TestInvertedIndexFunctionality(const vector<string>& docs, const std::vector<string>& requests, const std::vector<vector<Entry>>& expected); 
 // {

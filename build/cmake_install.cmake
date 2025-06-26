@@ -39,7 +39,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/x86_64-w64-mingw32-objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/llvm-objdump-19")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -60,6 +60,11 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/lev/yadi/DEVEL/41_SearchEngine/build/nlohmann_json/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/lev/yadi/DEVEL/41_SearchEngine/build/_deps/googletest-build/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

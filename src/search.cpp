@@ -4,7 +4,10 @@
 
 #include "search.h"
 
-void indexingPerformed();
+void indexingPerformed()
+{
+
+};
 
 //void find(std::string* nameSearch, std::string* rootSearch, bool* fileOnly, std::string* mask){};
 void findFiles(std::string* nameSearch)
@@ -40,7 +43,10 @@ public:
     // * Метод определяет количество вхождений слова word в загруженной базедокументов
     // * @param word слово, частоту вхождений которого необходимо определить
     // * @return возвращает подготовленный список с частотой слов
-    std::vector<Entry> GetWordCount(const std::string& word);
+    std::vector<Entry> GetWordCount(const std::string& word)
+    {
+        
+    };
 
 };
 
@@ -61,8 +67,8 @@ private:
     InvertedIndex _index;
 
 public:
-    SearchServer();
-    ~SearchServer();
+    //SearchServer();
+    
     // /**
     // * @param idx в конструктор класса передаётся ссылка на класс
     // InvertedIndex,
@@ -88,5 +94,10 @@ public:
         return listAnswer;
     };
 
+
+    ~SearchServer()
+    {
+        
+    };
 };
 
