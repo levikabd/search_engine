@@ -6,4 +6,4 @@ Description: GoogleTest (without main() function)
 Version: 1.12.1
 URL: https://github.com/google/googletest
 Libs: -L${libdir} -lgtest 
-Cflags: -I${includedir} -DGTEST_HAS_PTHREAD=1
+Cflags: -I${includedir} -DGTEST_HAS_PTHREAD=0

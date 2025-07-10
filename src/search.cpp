@@ -45,7 +45,10 @@ public:
     // * @return возвращает подготовленный список с частотой слов
     std::vector<Entry> GetWordCount(const std::string& word)
     {
-        
+        std::vector<Entry> wordCount;
+
+
+        return wordCount;        
     };
 
 };
