@@ -1,3 +1,0 @@
-/home/lev/yadi/DEVEL/41_SearchEngine/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
-/home/lev/yadi/DEVEL/41_SearchEngine/build/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
-/home/lev/yadi/DEVEL/41_SearchEngine/build/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir
