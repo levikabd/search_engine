@@ -39,6 +39,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/i686-w64-mingw32-objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/llvm-objdump-19")
 endif()
 

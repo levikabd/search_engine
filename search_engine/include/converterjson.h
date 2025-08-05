@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+#include <search.h>
+
 //**
 //* Класс для работы с JSON-файлами
 //*/
@@ -10,15 +12,17 @@
 class ConverterJSON
 { 
     private:
-        std::string name;
-        std::string version;
+        std::string name;        
+        float version;  // std::string version;
         int max_responses;
         std::vector<std::string> files;
-        std::vector<std::string> requests;
+        std::vector<std::vector<std::string>> requests;
     public:
         
         ConverterJSON() = default;
         ~ConverterJSON();
+
+        std::string getConfigName();
 
         void readSettings();
 
@@ -38,17 +42,20 @@ class ConverterJSON
 //     // //*/
         int GetResponsesLimit();
 
+        void readRequests();
+
 //     // /**
 //     // * Метод получения запросов из файла requests.json
 //     // * @return возвращает список запросов из файла requests.json
 //     // */
-        std::vector<std::string> GetRequests();
+        std::vector<std::vector<std::string>> GetRequests();
 
 //     // /**
 //     // * Положить в файл answers.json результаты поисковых запросов
 //     // */
     //void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers);
-        void putAnswers(std::vector<std::vector<std::pair<int, float>>>);
+        //void putAnswers(std::vector<std::vector<std::pair<int, float>>>);
+        void putAnswers(std::vector<std::vector<RelativeIndex>>);
 
         //void convertReqJSON(){};
         //void ansverJSON();
