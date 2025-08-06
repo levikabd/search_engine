@@ -251,10 +251,48 @@
             return;
         };
         //nlohmann::json j = json::j_vec(answers);
-        nlohmann::json j;
-        nlohmann::json j_answers;
-        j["answers"]=j_answers;
+        //nlohmann::json j_ans;   
+        nlohmann::json j_ans;
+        for (size_t i = 0; i < answers.size(); i++)
+        {
+            std::vector<RelativeIndex> _answer=answers.at(i);
 
+            nlohmann::json j_docs;
+            if (_answer.size()<1)
+            {
+                j_docs["result"] = false;
+            } else
+            {
+                j_docs["result"] = true;
+
+                nlohmann::json j_rel;
+                for (size_t k = 0; k < _answer.size(); k++)
+                {
+                    nlohmann::json j_d;
+                    RelativeIndex doc=_answer.at(k);
+                    size_t doc_id = doc.doc_id;
+                    size_t rank   = doc.rank;    
+                    //"docid": 0, “rank” : 0.989,          
+                    std::pair<std::pair<std::string, size_t>,std::pair<std::string, size_t>> pr_doc={{"docid",doc_id},{"rank",rank}}; 
+                    nlohmann::json j_pr =pr_doc;
+                    j_rel.push_back(j_pr);
+                };                
+
+                j_docs["relevance"] = j_rel;
+            };
+            
+            //std::string num=std::printf("%#o3.0zu", i+1);            
+            //std::string num=std::printf("%#zo3.0l", i+1);            
+            //std::string num=std::printf("%zu", i+1);            
+            //auto num=std::printf("%zu", i+1);            
+            //auto num=std::printf("%#zo3.0l", i+1);            
+            //auto num=std::printf("%#zo3.0l", i+1);       
+            std::string num = std::to_string(i+1);     
+            j_ans["request"+num]=j_docs;
+        };
+        
+        nlohmann::json j;
+        j["answers"]=j_ans;
 
         auto j_str = to_string(j); 
         //dict >> file;
