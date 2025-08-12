@@ -21,7 +21,7 @@ set(MY_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/search_engine/include)
 
 add_executable(search_engine main.cpp 
 ${MY_INCLUDE_DIR}/search_engine.h ${MY_INCLUDE_DIR}/converterjson.h ${MY_INCLUDE_DIR}/search.h  ${MY_INCLUDE_DIR}/help.h
-src/search_engine.cpp src/converterjson.cpp src/search.cpp  src/help.cpp 
+src/search_engine.cpp src/converterjson.cpp src/search.cpp 
 )
 
 target_link_libraries(search_engine PRIVATE nlohmann_json::nlohmann_json)

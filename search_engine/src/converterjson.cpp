@@ -32,6 +32,13 @@
     void  ConverterJSON::readSettings()
     {
         std::ifstream file("search_engine/res/config.json");       
+
+        // if (file.is_open())
+        // {
+        //     std::cout << "Config is open! \n";                 
+        // }else{
+        //     return;
+        // };
         try
         {
             if (!(file.is_open()))
@@ -49,7 +56,7 @@
         file >> data;
         file.close();
 
-    //    std::cout << data << "\n";
+        //std::cout << data << "\n";
 
         files.clear();
         nlohmann::json configData;
@@ -58,14 +65,23 @@
         int max_responsesData;
         nlohmann::json dataFiles;
 
-        bool boolConfig=false;
+        //bool boolConfig=false;
+
+        //std::cout << "Sorting through!\n";
+        // int num=0;
+        // for (auto& el : data.items())
+        // {
+        //     num++;
+        //     std::cout << num << "key: " << el.key() << "\n";
+        // };
+        // return;
 
         for (auto& el : data.items())
         {
             if (el.key()=="config")
             {
                 configData=el.value();
-                boolConfig = true;                
+                //boolConfig = true;                
             };        
             if (el.key()=="files")
             {
@@ -73,11 +89,25 @@
             };        
         };
 
+        // std::cout << "TYPE DATA1: " << configData.type_name() << "\n";
+        // std::cout << "TYPE DATA2: " << dataFiles.type_name() << "\n";
+ 
+        //auto configData=data["config"];
+        // if (boolConfig==true)
+        if(configData.empty())
+        {
+            std::cout << "Config is empty!!!\n";
+            return;
+        }else{
+            //boolConfig=true;
+            //std::cout << "Config is reading!\n";
+        };
+
         try
         {
-            if(boolConfig != true)
+            if(configData.empty() == true)
             {
-                throw std::logic_error("Config file is empty!");
+                throw std::logic_error("Config file is empty!\n");
             };
         }
         catch(const std::exception& e)
@@ -86,19 +116,26 @@
         };
         
 
-        for (auto it : configData.items())
+        for (auto& it : configData.items())
         {       
             if (it.key() =="name")
             {
                 nameData = it.value();
             } else if (it.key() =="version")
             {
-                versionData = it.value();
+                std::string verD=it.value();
+                //versionData = float(verD);
+                versionData = std::stof(verD);
             } else if (it.key() =="max_responses")
             {
                 max_responsesData = it.value();
             };
+            //std::cout << it << "\n";
         };
+
+        // std::cout << "TYPE DATA1: " << configData << "\n";
+        // std::cout << "TYPE DATA2: " << dataFiles << "\n";
+        // return;
 
         name = nameData;
         version = versionData;
@@ -144,13 +181,11 @@
 //     //* Метод получения содержимого файлов
 //     //* @return Возвращает список с содержимым файлов перечисленных
 //     //* в config.json
-    std::vector<std::string> ConverterJSON::GetTextDocuments()
-    {
-        std::vector<std::string> docs;
-
-
-        return docs;
-    };
+    // std::vector<std::string> ConverterJSON::GetTextDocuments()
+    // {
+    //     std::vector<std::string> docs;
+    //     return docs;
+    // };
 
     int ConverterJSON::GetResponsesLimit()
     {
@@ -219,14 +254,14 @@
         };
 
         //test show block
-        for (int i = 0; i < requests.size(); i++)
-        {
-            std::vector<std::string> lineWords=requests[i];
-            for (int k = 0; k < lineWords.size(); k++)
-            {
-                std::cout << "requests " << i << ": " << k << ": " << lineWords[k] << std::endl;
-            };
-        };
+        // for (int i = 0; i < requests.size(); i++)
+        // {
+        //     std::vector<std::string> lineWords=requests[i];
+        //     for (int k = 0; k < lineWords.size(); k++)
+        //     {
+        //         std::cout << "requests " << i << ": " << k << ": " << lineWords[k] << std::endl;
+        //     };
+        // };
 
     };
 
@@ -236,6 +271,15 @@
     {
         readRequests();
         return requests;
+    };
+
+    std::string num001(std::string num)
+    {
+        while (num.size()<3)
+        {
+            num = "0" + num;
+        };
+        return num;
     };
 
 //     // * Положить в файл answers.json результаты поисковых запросов
@@ -276,6 +320,9 @@
                     std::pair<std::pair<std::string, size_t>,std::pair<std::string, size_t>> pr_doc={{"docid",doc_id},{"rank",rank}}; 
                     nlohmann::json j_pr =pr_doc;
                     j_rel.push_back(j_pr);
+
+                    // log out
+                    std::cout << "answer: " << doc_id << " : " << rank << "\n";
                 };                
 
                 j_docs["relevance"] = j_rel;
@@ -288,7 +335,7 @@
             //auto num=std::printf("%#zo3.0l", i+1);            
             //auto num=std::printf("%#zo3.0l", i+1);       
             std::string num = std::to_string(i+1);     
-            j_ans["request"+num]=j_docs;
+            j_ans["request"+num001(num)]=j_docs;
         };
         
         nlohmann::json j;

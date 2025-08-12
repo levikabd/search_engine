@@ -173,6 +173,18 @@
             thread.join();  
         };
 
+        // log out
+        //for (size_t i = 0; i < freq_dictionary.size(); i++)
+        for (const auto& [word, entries] : freq_dictionary)        
+        {
+            //std::map mp=freq_dictionary[i];
+            //std::vector<entry> vec=entries;
+            for (auto entryV : entries)
+            {
+                std::cout << word << ": " << entryV.doc_id << " - " << entryV.count << "\n";
+            };          
+        };
+        
     };
 
     // * Метод определяет количество вхождений слова word в загруженной базе документов

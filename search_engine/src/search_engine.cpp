@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-#include <help.h>
+//#include <help.h>
 
 #include <converterjson.h>
 #include <search.h>
