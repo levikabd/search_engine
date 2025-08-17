@@ -5,8 +5,6 @@ that performs a search and can be configured via JSON files.
 
 This module allows you to search for files.
 
-This module allows you to search for files.
-
 1. Before launching the application, the names
 of the files that the engine will search for are specified in the configuration file.
 
