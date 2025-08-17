@@ -29,7 +29,7 @@ target_include_directories(search_engine PUBLIC ${MY_INCLUDE_DIR})
 
 #include(CTest)
 
-#enable_testing()
+enable_testing()
 
 set_target_properties(${TARGET} PROPERTIES
     CXX_STANDARD 17

@@ -8,7 +8,8 @@ project(search_engine VERSION 0.1.0 LANGUAGES C CXX)
 #set(JSON_BuildTests OFF CACHE INTERNAL "")
 
 add_subdirectory(search_engine)
-#add_subdirectory(test)
+add_subdirectory(test)
+
 #add_subdirectory(src)
 #add_subdirectory(res)
 
@@ -36,7 +37,7 @@ add_subdirectory(search_engine)
 
 #include(CTest)
 
-#enable_testing()
+enable_testing()
 
 #set_target_properties(${TARGET} PROPERTIES
 #    CXX_STANDARD 17

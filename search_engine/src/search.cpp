@@ -24,6 +24,7 @@
 // {
 // private:
 //     std::vector<std::string> docs; // список содержимого документов
+//     //std::vector<std::vector<std::string>> docs; // список содержимого документов
 //     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
 // public:
     // InvertedIndex() = default;
@@ -66,7 +67,7 @@
         *newWord="";
     };
     
-    // * Обновить или заполнить базу документов, по которой будем совершать поиск
+    // * Обновить или заполнить базу документов, по которой будем совершать поиск+
     // * @param texts_input содержимое документов
     void InvertedIndex::UpdateDocumentBase(std::vector<std::string> list_docs)
     {   
@@ -74,7 +75,7 @@
         size_t nDoc=0;
         for (auto i : list_docs) //  list line in docs
         {
-            nDoc++;
+            //nDoc++;
             //std::vector<std::string> doc;
             std::string doc="";
             std::string line="";
@@ -94,7 +95,7 @@
  
             }; // end file
 
-            docs.push_back(line);
+            docs.push_back(doc);
 
             file.close();
         }; // end name
@@ -108,34 +109,63 @@
                 std::string newWord = "";
                 for (auto k : line) // selecting characters in a string
                 {
+                    // wordPlus(&newWord, i);
+                    // if (newWord.size()>=100)
+                    // {                    //     //newWord="";
+                    //     wordPlus(&newWord, i);
+                    //     words++;                    // };
+
                     //if (((k>='A')&(k<='Z')) || ((k>='a')&(k<='z')))
-                    if ((k>='a') && (k<='z'))
+                    if (islower(k))
                     {
                         newWord=newWord + k;
-
-                        if (newWord.size()>=100)
-                        {
-                            //newWord="";
-                            wordPlus(&newWord, i);
-                            words++;
-                        };
-                        
-                    } else
+                        continue;
+                    };
+                    
+                    if (newWord.size()<1)
                     {
-                        if (newWord.size()<1)
-                        {
-                            continue;
-                        };
-                        wordPlus(&newWord, i);
-                        words++;
+                        continue;
+                    // } else if ((!islower(k)) && (newWord.size()>0))
                     };
 
-                    if (words>=1000)
-                    {
-                        break;
-                    };                   
+                    words++;                    
 
+                    if(newWord.size()>100)
+                    {
+                        std::cout << "Doc " << i << ". The word length is more than 100 characters.\n";
+                        newWord="";  
+                        continue;
+                    };
+
+                    if (words>1000)
+                    {                        
+                        continue;
+                    };   
+                                
+                    wordPlus(&newWord, i);          
                 }; // end line
+
+                if (newWord.size()>0)
+                {
+                    words++;               
+                    if(newWord.size()>100)
+                    {
+                        std::cout << "Doc " << i << ". The word length is more than 100 characters.\n";
+                        newWord="";  
+                        //return;
+                    }else if (words>1000)
+                    {                        
+                        //return;
+                    } else
+                    {
+                        wordPlus(&newWord, i); 
+                    };                                
+                };                
+                
+                if (words>1000)
+                {
+                    std::cout << "Doc " << i << ". The number of words has reached " << words << ".\n";
+                };
         //return 1;
     };
 
@@ -160,8 +190,7 @@
             //int start = i * chunk_size;  
             //int end = (i + 1) * chunk_size;  
             // threads.emplace_back([&arr, start, end, &results, i]() {  
-            //     results[i] = sum(arr, start, end);  
-            // });
+            //     results[i] = sum(arr, start, end);              // });
             std::string line=docs[i];
             //threads.emplace_back(indexD(line, i));
             threads.emplace_back([&](){ indexD(line, i); });
@@ -184,7 +213,43 @@
                 std::cout << word << ": " << entryV.doc_id << " - " << entryV.count << "\n";
             };          
         };
-        
+
+        // for (size_t k = 0; k < freq_dictionary.size(); k++)
+        for (const auto& [word, entries] : freq_dictionary)   
+        {     
+            std::vector<Entry> vec = entries;
+            bool swapped;
+            for (size_t k = 0; k < vec.size(); k++)
+            {
+                swapped = false;
+                for (size_t j = 0; j < vec.size() - k - 1; j++)
+                {
+                    if (vec[j].count < vec[j + 1].count) 
+                    {
+                        // Entry entryT;
+                        // //Entry entryT,entryJ,entryJ1;
+                        // //std::swap(entries[j], entries[j + 1]);
+                        // entryT.doc_id =vec[j].doc_id;
+                        // entryT.count =vec[j].count;
+
+                        // vec[j].doc_id =vec[j+1].doc_id;
+                        // vec[j].count =vec[j+1].count;
+
+                        // vec[j+1].doc_id =entryT.doc_id;
+                        // vec[j+1].count =entryT.count;
+
+                        std::swap(vec[j], vec[j + 1]);
+
+                        swapped = true;
+                    };
+                };
+                if (!swapped) 
+                {
+                    break;
+                };
+            };
+            freq_dictionary[word]=vec;
+        };        
     };
 
     // * Метод определяет количество вхождений слова word в загруженной базе документов
@@ -245,7 +310,7 @@
             std::vector<std::string> queri= queries_input->at(i);
 
             std::vector<RelativeIndex> answerListDocs;
-            bool result = false;
+            //bool result = false;
 
             std::map<size_t,size_t> ranks;
             for (size_t k = 0; k < queri.size(); k++)
@@ -307,10 +372,10 @@
                 };
             };
 
-            if (ranks.size()<1)
-            {
-                result=true;
-            };
+            // if (ranks.size()<1)
+            // {
+            //     result=true;
+            // };
             listAnswers.push_back(answerListDocs);
             
         };

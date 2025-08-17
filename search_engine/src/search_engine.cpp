@@ -63,8 +63,6 @@ int mainSE()
     //convert.putAnswers(std::vector<std::vector<std::pair<int, float>>>);
     convert.putAnswers(listAnswers);
  
-    
-
     return 0;
 };
 

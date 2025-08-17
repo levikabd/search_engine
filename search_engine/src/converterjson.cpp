@@ -312,6 +312,11 @@
                 nlohmann::json j_rel;
                 for (size_t k = 0; k < _answer.size(); k++)
                 {
+                    if (k=max_responses)
+                    {
+                        break;
+                    };
+                    
                     nlohmann::json j_d;
                     RelativeIndex doc=_answer.at(k);
                     size_t doc_id = doc.doc_id;
