@@ -1,0 +1,7 @@
+add_test([=[TestCaseInvertedIndex.TestBasic]=]  /home/lev/yadi/DEVEL/41_SearchEngine/build/test/hello_test [==[--gtest_filter=TestCaseInvertedIndex.TestBasic]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[TestCaseInvertedIndex.TestBasic]=]  PROPERTIES WORKING_DIRECTORY /home/lev/yadi/DEVEL/41_SearchEngine/build/test SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[TestCaseInvertedIndex.TestBasic2]=]  /home/lev/yadi/DEVEL/41_SearchEngine/build/test/hello_test [==[--gtest_filter=TestCaseInvertedIndex.TestBasic2]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[TestCaseInvertedIndex.TestBasic2]=]  PROPERTIES WORKING_DIRECTORY /home/lev/yadi/DEVEL/41_SearchEngine/build/test SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[TestCaseInvertedIndex.TestInvertedIndexMissingWord]=]  /home/lev/yadi/DEVEL/41_SearchEngine/build/test/hello_test [==[--gtest_filter=TestCaseInvertedIndex.TestInvertedIndexMissingWord]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[TestCaseInvertedIndex.TestInvertedIndexMissingWord]=]  PROPERTIES WORKING_DIRECTORY /home/lev/yadi/DEVEL/41_SearchEngine/build/test SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  hello_test_TESTS TestCaseInvertedIndex.TestBasic TestCaseInvertedIndex.TestBasic2 TestCaseInvertedIndex.TestInvertedIndexMissingWord)

@@ -11,6 +11,7 @@
         // std::string name;
         // float version;  //  std::string version;
         // int max_responses;
+        // std::vector<std::string> filesNames;
         // std::vector<std::string> files;
         // std::vector<std::vector<std::string>> requests;
 // public:
@@ -26,6 +27,38 @@
     std::string ConverterJSON::getConfigName()
     {
         return name;
+    };
+
+    void ConverterJSON::readFiles()
+    {
+        for (auto it : filesNames)
+        {     
+            //nDoc++;
+            //std::vector<std::string> doc;
+            std::string doc="";
+            std::string line="";
+
+            //for (auto i : list_docs) //  list line in docs
+            std::ifstream file(it);
+            if (file.is_open()!=true)
+            {
+                std::cout << "File: " << it << " is not open! \n";
+                continue;
+            };
+            
+            while (!file.eof())
+            {
+                file >> line;
+                doc= doc +" "+ line; 
+            }; // end file
+
+            //docs.push_back(doc);
+
+            //files.push_back(it.value());
+            files.push_back(doc);
+            
+            file.close();
+        };
     };
 
     //void  ConverterJSON::readSettings(std::string* name,    std::string* version, int* max_responses,    std::vector<std::string>* files)
@@ -156,9 +189,10 @@
         max_responses = max_responsesData;
         //files = dataFiles;
 
+        filesNames.clear();
         for (auto it : dataFiles.items())
         {       
-            files.push_back(it.value());
+            filesNames.push_back(it.value());
         };
         
         // //std::cout << "configData: "       << configData << "\n";

@@ -1,8 +1,13 @@
 #include <fstream>
+#include <vector>
+#include <string>
 
-#include "search.h"
+//#include "search.h"
 //#include "test.h"
 //#include <search.h>
+#include "../search_engine/include/search.h"
+//#include <search.h>
+
 #include <gtest/gtest.h>
 
 // TEST(sample_test_case, sample_test)
@@ -10,67 +15,68 @@
 //     EXPECT_EQ(1, 1);
 // }
 
-struct Entry
-{
-    size_t doc_id, count;
-    // Данный оператор необходим для проведения тестовых сценариев
-    bool operator ==(const Entry& other) const 
-    {
-        return (doc_id == other.doc_id && count == other.count);
-    };
-};
+// struct Entry
+// {
+//     size_t doc_id, count;
+//     // Данный оператор необходим для проведения тестовых сценариев
+//     bool operator ==(const Entry& other) const 
+//     {
+//         return (doc_id == other.doc_id && count == other.count);
+//     };
+// };
 
-class InvertedIndex
-{
-private:
-    std::vector<std::string> docs; // список содержимого документов
-    std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
-public:
-    //InvertedIndex() = default; 
-    void UpdateDocumentBase(std::vector<std::string> list_docs)
-    {   
-        docs.clear();
-        size_t nDoc=0;
-        for (auto i : list_docs) //  list line in docs
-        {
-            std::string doc="";
-            std::string line="";
-            std::ifstream file(i);
-            if (file.is_open()!=true)
-            {
-                std::cout << "File: " << i << " is not open! \n";
-                continue;
-            };
+// class InvertedIndex
+// {
+// private:
+//     std::vector<std::string> docs; // список содержимого документов
+//     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
+// public:
+//     //InvertedIndex() = default; 
+//     void UpdateDocumentBase(std::vector<std::string> list_docs)
+//     {   
+//         docs.clear();
+//         size_t nDoc=0;
+//         for (auto i : list_docs) //  list line in docs
+//         {
+//             std::string doc="";
+//             std::string line="";
+//             std::ifstream file(i);
+//             if (file.is_open()!=true)
+//             {
+//                 std::cout << "File: " << i << " is not open! \n";
+//                 continue;
+//             };
             
-            while (!file.eof())
-            {
-                file >> line;
-                doc= doc +" "+ line;
+//             while (!file.eof())
+//             {
+//                 file >> line;
+//                 doc= doc +" "+ line;
  
-            }; // end file
+//             }; // end file
 
-            docs.push_back(doc);
+//             docs.push_back(doc);
 
-            file.close();
-        }; // end name
-    };
+//             file.close();
+//         }; // end name
+//     };
 
-    std::vector<Entry> GetWordCount(const std::string& word)
-    {
-        std::vector<Entry> wordEntry;
-        wordEntry = freq_dictionary[word];
-        return wordEntry;        
-    };
+//     std::vector<Entry> GetWordCount(const std::string& word)
+//     {
+//         std::vector<Entry> wordEntry;
+//         wordEntry = freq_dictionary[word];
+//         return wordEntry;        
+//     };
     
-};
+// };
 
 using namespace std;
 
-void TestInvertedIndexFunctionality(const vector<string>& docs, const std::vector<string>& requests, const std::vector<vector<Entry>>& expected) 
+void TestInvertedIndexFunctionality(const std::vector<std::string> docs, const std::vector<string>& requests, const std::vector<vector<Entry>>& expected) 
 {
     std::vector<std::vector<Entry>> result;
     InvertedIndex idx;
     idx.UpdateDocumentBase(docs);
+
     for(auto& request : requests) 
     {
         std::vector<Entry> word_count = idx.GetWordCount(request);

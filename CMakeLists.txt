@@ -44,3 +44,9 @@ enable_testing()
 #    CXX_STANDARD_REQUIRED YES
 #    CXX_EXTENSIONS NO
 #)
+
+# Copying configuration and resource files to a binary directory
+
+file(COPY search_engine/files DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY search_engine/resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+     

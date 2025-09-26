@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include <search.h>
+#include "search.h"
 
 //**
 //* Класс для работы с JSON-файлами
@@ -15,6 +15,7 @@ class ConverterJSON
         std::string name;        
         float version;  // std::string version;
         int max_responses;
+        std::vector<std::string> filesNames;
         std::vector<std::string> files;
         std::vector<std::vector<std::string>> requests;
     public:
@@ -23,6 +24,8 @@ class ConverterJSON
         ~ConverterJSON();
 
         std::string getConfigName();
+
+        void readFiles();
 
         void readSettings();
 

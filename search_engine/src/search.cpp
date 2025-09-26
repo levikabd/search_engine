@@ -8,7 +8,7 @@
 
 #include <thread>
 
-#include "search.h"
+#include "../include/search.h"
 
 // struct Entry 
 // {
@@ -75,29 +75,32 @@
         size_t nDoc=0;
         for (auto i : list_docs) //  list line in docs
         {
-            //nDoc++;
-            //std::vector<std::string> doc;
-            std::string doc="";
-            std::string line="";
+            // //nDoc++;
+            // //std::vector<std::string> doc;
+            // std::string doc="";
+            // std::string line="";
 
-            //for (auto i : list_docs) //  list line in docs
-            std::ifstream file(i);
-            if (file.is_open()!=true)
-            {
-                std::cout << "File: " << i << " is not open! \n";
-                continue;
-            };
+            // //for (auto i : list_docs) //  list line in docs
+            // std::ifstream file(i);
+            // if (file.is_open()!=true)
+            // {
+            //     std::cout << "File: " << i << " is not open! \n";
+            //     continue;
+            // };
             
-            while (!file.eof())
-            {
-                file >> line;
-                doc= doc +" "+ line;
+            // while (!file.eof())
+            // {
+            //     file >> line;
+            //     doc= doc +" "+ line;
  
-            }; // end file
+            // }; // end file
 
-            docs.push_back(doc);
+            // docs.push_back(doc);
 
-            file.close();
+            // file.close();
+
+            docs.push_back(i);
+
         }; // end name
         //return;
     };

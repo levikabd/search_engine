@@ -1,6 +1,6 @@
 //#include <iostream>
 #include <search_engine.h>
-//#include <test.h>
+//#include "../test/test.h"
 //#include "res.rc"
 
 int main()

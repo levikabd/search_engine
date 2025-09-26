@@ -35,6 +35,9 @@ int mainSE()
     //     return -1;
     // };  
     std::vector<std::string> input_docs;
+
+    convert.readFiles();
+
     input_docs=convert.getFiles();
     InvertedIndex indexI;
 

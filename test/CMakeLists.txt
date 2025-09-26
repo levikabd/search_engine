@@ -5,6 +5,9 @@ project(my_test)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+#include(search_engine)
+#add_subdirectory(search_engine)
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -18,7 +21,8 @@ enable_testing()
 
 add_executable(
   hello_test
-  test.cpp
+  test.cpp 
+  ../search_engine/src/search.cpp
 )
 
 # add_executable(
