@@ -23,5 +23,6 @@ a set of words that you need to use to find documents.
 The maximum number of possible documents in the response is set in
 the configuration file.
 
-13. At the end, the program generates the answers file.the json that records
+7. At the end, the program generates the answers file.the json that records
 the search results.
+
