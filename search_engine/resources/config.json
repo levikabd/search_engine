@@ -5,9 +5,11 @@
 "max_responses": 5
 },
 "files": [
-"search_engine/resources/file001.txt",
-"search_engine/resources/file002.txt",
-"search_engine/resources/file003.txt",
-"search_engine/resources/file004.txt"
+"files/file001.txt",
+"files/file002.txt",
+"files/file003.txt",
+"files/file004.txt",
+"files/file005.txt",
+"files/file006.txt"
 ]
 }

@@ -1,1 +1,0 @@
-/usr/bin/clang++-19 -g CMakeFiles/search_engine.dir/main.cpp.o CMakeFiles/search_engine.dir/src/search_engine.cpp.o CMakeFiles/search_engine.dir/src/converterjson.cpp.o CMakeFiles/search_engine.dir/src/search.cpp.o -o search_engine 

@@ -76,6 +76,7 @@ void TestInvertedIndexFunctionality(const std::vector<std::string> docs, const s
     std::vector<std::vector<Entry>> result;
     InvertedIndex idx;
     idx.UpdateDocumentBase(docs);
+    idx.indexingDocs();
 
     for(auto& request : requests) 
     {
@@ -87,7 +88,7 @@ void TestInvertedIndexFunctionality(const std::vector<std::string> docs, const s
 
 TEST(TestCaseInvertedIndex, TestBasic) 
 {
-    const vector<string> docs = {"london is the capital of great britain","big ben is the nickname for the Great bell of the striking clock"};
+    const vector<string> docs = {"london is the capital of great britain","big ben is the nickname for the great bell of the striking clock"};
     const vector<string> requests = {"london", "the"};
     const vector<vector<Entry>> expected = {{{0, 1}}, {{0, 1}, {1, 3}}};
     TestInvertedIndexFunctionality(docs, requests, expected);

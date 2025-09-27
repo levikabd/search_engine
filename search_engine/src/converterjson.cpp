@@ -64,7 +64,7 @@
     //void  ConverterJSON::readSettings(std::string* name,    std::string* version, int* max_responses,    std::vector<std::string>* files)
     void  ConverterJSON::readSettings()
     {
-        std::ifstream file("search_engine/res/config.json");       
+        std::ifstream file("resources/config.json");       
 
         // if (file.is_open())
         // {
@@ -228,7 +228,7 @@
 
     void ConverterJSON::readRequests()
     {
-        std::ifstream file("search_engine/res/requests.json");
+        std::ifstream file("resources/requests.json");
         if (!(file.is_open()))
         {
             std::cout << "The file 'requests.json' is not open! \n";
@@ -322,7 +322,7 @@
     {
         // std::ofstream sheet;
         // sheet.open("sheet.txt", std::ios::app);
-        std::ofstream file("search_engine/res/answers.json");
+        std::ofstream file("resources/answers.json");
         if (!(file.is_open()))
         {
             std::cout << "The file 'answers.json' is not open! \n";
