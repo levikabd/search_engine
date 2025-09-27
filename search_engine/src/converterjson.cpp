@@ -346,7 +346,7 @@
                 nlohmann::json j_rel;
                 for (size_t k = 0; k < _answer.size(); k++)
                 {
-                    if (k=max_responses)
+                    if (k==max_responses)
                     {
                         break;
                     };
