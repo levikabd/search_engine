@@ -7,6 +7,7 @@
 #include <fstream>
 
 #include <thread>
+#include <mutex>
 
 #include "../include/search.h"
 
@@ -50,7 +51,10 @@
             size_t count = entryV.count;
             entryV.count++;
             vecEntry[n] = entryV;
+            // std::mutex mtx;
+            // mtx.lock();
             freq_dictionary[newW]=vecEntry;
+            //mtx.unlock();
             break;
         };
         
@@ -110,6 +114,7 @@
     {
                 int words=0;
                 std::string newWord = "";
+                //std::cout << line << std::endl;
                 for (auto k : line) // selecting characters in a string
                 {
                     // wordPlus(&newWord, i);
@@ -118,11 +123,14 @@
                     //     wordPlus(&newWord, i);
                     //     words++;                    // };
 
+                    //if (islower(k))
                     //if (((k>='A')&(k<='Z')) || ((k>='a')&(k<='z')))
-                    if (islower(k))
+                    if ((k>='a')&&(k<='z'))
                     {
                         newWord=newWord + k;
                         continue;
+                    } else {
+                        //std::cout << k << std::endl;
                     };
                     
                     if (newWord.size()<1)
@@ -130,22 +138,28 @@
                         continue;
                     // } else if ((!islower(k)) && (newWord.size()>0))
                     };
-
-                    words++;                    
-
                     if(newWord.size()>100)
                     {
-                        std::cout << "Doc " << i << ". The word length is more than 100 characters.\n";
-                        newWord="";  
+                        std::cout << "Doc " << i << ". The word length is more than 100 characters.\n";  
+                        //std::cout << newWord << std::endl;
+                        newWord="";                        
                         continue;
                     };
+                   
+                    words++;       
+                    //std::cout << newWord << std::endl; 
 
-                    if (words>1000)
+                    std::mutex mtx;
+                    mtx.lock();
+                    wordPlus(&newWord, i);
+                    mtx.unlock();
+
+                    newWord=""; 
+                    if (words==1000)
                     {                        
-                        continue;
-                    };   
-                                
-                    wordPlus(&newWord, i);          
+                        break;
+                    };                                   
+                              
                 }; // end line
 
                 if (newWord.size()>0)
@@ -172,40 +186,8 @@
         //return 1;
     };
 
-    void InvertedIndex::indexingDocs()    
-    {   
-        // for (size_t i = 0; i < docs.size(); i++)
-        // {
-        //     std::string line=docs[i];            
-        //     std::thread th(indexD, line, i);
-        //     //indexD(line,i);
-        // };
-        
-        // for (size_t i = 0; i < docs.size(); i++)
-        // {
-        //     if (th.joinable()){th.join();};
-        // };
-
-        std::vector<std::thread> threads;  
-        
-        // std::vector<int> results(docs.size());  
-        for (int i = 0; i < docs.size(); ++i) {  
-            //int start = i * chunk_size;  
-            //int end = (i + 1) * chunk_size;  
-            // threads.emplace_back([&arr, start, end, &results, i]() {  
-            //     results[i] = sum(arr, start, end);              // });
-            std::string line=docs[i];
-            //threads.emplace_back(indexD(line, i));
-            threads.emplace_back([&](){ indexD(line, i); });
-        };  
-
-        // Дождаться завершения всех потоков  
-        for (auto &thread : threads) 
-        {  
-            thread.join();  
-        };
-
-        // log out
+    void InvertedIndex::outContentFreqDictionary()
+    {
         //for (size_t i = 0; i < freq_dictionary.size(); i++)
         for (const auto& [word, entries] : freq_dictionary)        
         {
@@ -216,7 +198,10 @@
                 std::cout << word << ": " << entryV.doc_id << " - " << entryV.count << "\n";
             };          
         };
+    };
 
+    void InvertedIndex::sortingDict()
+    {
         // for (size_t k = 0; k < freq_dictionary.size(); k++)
         for (const auto& [word, entries] : freq_dictionary)   
         {     
@@ -252,7 +237,46 @@
                 };
             };
             freq_dictionary[word]=vec;
-        };        
+        }; 
+    };
+
+    void InvertedIndex::indexingDocs()    
+    {   
+        // for (size_t i = 0; i < docs.size(); i++)
+        // {
+        //     std::string line=docs[i];            
+        //     std::thread th(indexD, line, i);
+        //     //indexD(line,i);
+        // };
+        
+        // for (size_t i = 0; i < docs.size(); i++)
+        // {
+        //     if (th.joinable()){th.join();};
+        // };
+
+        std::vector<std::thread> threads;  
+        
+        // std::vector<int> results(docs.size());  
+        for (int i = 0; i < docs.size(); ++i) {  
+            //int start = i * chunk_size;  
+            //int end = (i + 1) * chunk_size;  
+            // threads.emplace_back([&arr, start, end, &results, i]() {  
+            //     results[i] = sum(arr, start, end);              // });
+            std::string line=docs[i];
+            //threads.emplace_back(indexD(line, i));
+            threads.emplace_back([&](){ indexD(line, i); });
+        };  
+
+        // Дождаться завершения всех потоков  
+        for (auto &thread : threads) 
+        {  
+            thread.join();  
+        };
+
+        sortingDict();
+        
+        // log out
+        //outContentFreqDictionary();
     };
 
     // * Метод определяет количество вхождений слова word в загруженной базе документов
@@ -262,6 +286,7 @@
     {
         std::vector<Entry> wordEntry;
         wordEntry = freq_dictionary[word];
+
         return wordEntry;        
     };
 

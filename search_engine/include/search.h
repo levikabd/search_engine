@@ -33,6 +33,8 @@ public:
     void UpdateDocumentBase(std::vector<std::string>);
 
     void indexD(std::string, size_t);
+    void outContentFreqDictionary();
+    void sortingDict();
     void indexingDocs();
    
 //     // * Метод определяет количество вхождений слова word в загруженной базедокументов

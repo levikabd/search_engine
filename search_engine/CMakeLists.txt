@@ -7,7 +7,6 @@ project(search_engine VERSION 0.1.0 LANGUAGES C CXX)
 
 #set(JSON_BuildTests OFF CACHE INTERNAL "")
 
-add_subdirectory(resources)
 #add_subdirectory(resources)
 #add_subdirectory(search_engine)
 add_subdirectory(src)

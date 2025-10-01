@@ -361,7 +361,7 @@
                     j_rel.push_back(j_pr);
 
                     // log out
-                    std::cout << "answer: " << doc_id << " : " << rank << "\n";
+                    std::cout << "answer №" << i << ": " << doc_id << " : " << rank << "\n";
                 };                
 
                 j_docs["relevance"] = j_rel;

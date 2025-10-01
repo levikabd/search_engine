@@ -47,6 +47,6 @@ enable_testing()
 
 # Copying configuration and resource files to a binary directory
 
-file(COPY search_engine/files DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
-file(COPY search_engine/resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY search_engine/files DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/search_engine)
+file(COPY search_engine/resources DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/search_engine)
      
