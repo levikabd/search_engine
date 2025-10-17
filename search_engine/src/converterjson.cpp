@@ -31,6 +31,9 @@
 
     void ConverterJSON::readFiles()
     {
+        //setlocale(LC_ALL, "");
+        // std::wcout << L"Привет мир!" << std::endl;
+
         for (auto it : filesNames)
         {     
             //nDoc++;

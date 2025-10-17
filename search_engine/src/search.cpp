@@ -188,6 +188,8 @@
 
     void InvertedIndex::outContentFreqDictionary()
     {
+        setlocale(LC_ALL, "");
+        //std::wcout << L"Привет мир!" << std::endl;
         //for (size_t i = 0; i < freq_dictionary.size(); i++)
         for (const auto& [word, entries] : freq_dictionary)        
         {
@@ -196,6 +198,7 @@
             for (auto entryV : entries)
             {
                 std::cout << word << ": " << entryV.doc_id << " - " << entryV.count << "\n";
+                //std::wcout << word << ": " << entryV.doc_id << " - " << entryV.count << std::endl;
             };          
         };
     };
