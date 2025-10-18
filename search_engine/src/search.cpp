@@ -279,7 +279,7 @@
         sortingDict();
         
         // log out
-        //outContentFreqDictionary();
+        outContentFreqDictionary();
     };
 
     // * Метод определяет количество вхождений слова word в загруженной базе документов
