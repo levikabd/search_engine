@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20251001-0931-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.25.1"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Linux"
+	Hostname="ppc"
+	OSRelease="6.1.0-31-amd64"
+	OSVersion="#1 SMP PREEMPT_DYNAMIC Debian 6.1.128-1 (2025-02-07)"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="156"
+	ProcessorCacheSize="4096"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="16383"
+	TotalPhysicalMemory="15772"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="2800"
+	>
+	<Testing>
+		<StartDateTime>Oct 01 16:33 +07</StartDateTime>
+		<StartTestTime>1759311209</StartTestTime>
+		<TestList/>
+		<EndDateTime>Oct 01 16:33 +07</EndDateTime>
+		<EndTestTime>1759311209</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
