@@ -1,5 +1,0 @@
-TestCaseInvertedIndex.TestBasic 0 0
-TestCaseInvertedIndex.TestBasic2 0 0
-TestCaseInvertedIndex.TestInvertedIndexMissingWord 0 0
----
-TestCaseInvertedIndex.TestInvertedIndexMissingWord
