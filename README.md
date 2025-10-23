@@ -1,4 +1,17 @@
 
+     ___    _____     __   ___       _  _     ___
+    // \\   ||       //||  || \\    ||  ||   //  \\
+    \\__    ||__    // ||  ||__||   ||__||  ||
+       \\   ||     //__||  ||\\     ||  ||  ||   
+    \\_//   ||___  ||  ||  || \\    ||  ||   \\__//
+    
+    _____     __   _     __     _       _    _   ____
+    ||       //|  //    // \\   ||     /||  //  ||  
+    ||__    //|| //    ||  ||   ||    //|| //   ||__
+    ||     // ||//     ||   __  ||   // ||//    ||   
+    ||__  //  ||/       \\_||   ||  //  ||/     ||___
+
+
 The search engine is a console application
 (an executable file running on a server or computer)
 that performs a search and can be configured via JSON files.
