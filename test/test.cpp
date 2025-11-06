@@ -1,13 +1,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
-
-//#include "search.h"
-//#include "test.h"
-//#include <search.h>
 #include "../search_engine/include/search.h"
-//#include <search.h>
-
 #include <gtest/gtest.h>
 
 // TEST(sample_test_case, sample_test)
@@ -90,7 +84,6 @@ TEST(TestCaseInvertedIndex, TestBasic)
 {
     //const vector<string> docs = {"london is the capital of great britain","big ben is the nickname for the great bell of the striking clock"};
     const vector<string> docs = {"london is the capital of great britain","big ben is the nickname for the great bell of the striking clock"};
-    //const vector<string> requests = {"london", "the"};
     const vector<string> requests = {"london", "the"};
     const vector<vector<Entry>> expected = {{{0, 1}}, {{0, 1}, {1, 3}}};
     TestInvertedIndexFunctionality(docs, requests, expected);
@@ -98,9 +91,9 @@ TEST(TestCaseInvertedIndex, TestBasic)
 
 TEST(TestCaseInvertedIndex, TestBasic2) 
 {
-    const vector<string> docs = {"milk milk milk milk water water water","milk water water","milk milk milk milk milk water water water water water","americano cappuccino"};
+    const vector<string> docs = {"milk milk milk milk water water water","milk water water","milk milk milk milk milk water water water water water","americano cappuchino"};
     const vector<string> requests = {"milk", "water", "cappuchino"};
-    const vector<vector<Entry>> expected = {{{0, 4}, {1, 1}, {2, 5}}, {{0, 2}, {1, 2}, {2, 5}}, {{3, 1}}};
+    const vector<vector<Entry>> expected = {{{1, 1}, {0, 4}, {2, 5}}, {{1, 2}, {0, 3}, {2, 5}}, {{3, 1}}};
     TestInvertedIndexFunctionality(docs, requests, expected);
 }
 

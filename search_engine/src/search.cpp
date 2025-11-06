@@ -34,10 +34,38 @@
     void InvertedIndex::wordPlus(std::string* newWord, size_t nDoc)
     {
         std::string newW = *newWord;
+
+        // log out
+        //std::cout << newW << std::endl;
+
+        std::mutex mtx;
+        mtx.lock();
+        std::map<std::string, std::vector<Entry>>* dictionary=&freq_dictionary;
+        //std::vector<Entry> vecEntry = dictionary->at(newW);
         std::vector<Entry> vecEntry = freq_dictionary[newW];
         //for (auto e : entry)
 
-        bool entryIs = false;
+        if (vecEntry.size()==0)
+        {
+            Entry entryV;
+            entryV.doc_id = nDoc;
+            entryV.count = 1;
+            vecEntry.push_back(entryV);
+
+            // std::mutex mtx;
+            // mtx.lock();
+            //dictionary->at(newW)=vecEntry;
+            freq_dictionary[newW]=vecEntry;
+            // mtx.unlock();
+            mtx.unlock();
+            *newWord="";
+            
+            return;
+        };
+        
+        // std::mutex mtx;
+        // mtx.lock();
+        bool iddocIs = false;
         for (int n=0; n<vecEntry.size(); n++)
         {
             Entry entryV;
@@ -47,27 +75,37 @@
             {
                 continue;
             };
-            entryIs=true;
-            size_t count = entryV.count;
+
+            //size_t count = entryV.count;
             entryV.count++;
             vecEntry[n] = entryV;
+
             // std::mutex mtx;
             // mtx.lock();
+            //dictionary->at(newW)=vecEntry;
             freq_dictionary[newW]=vecEntry;
-            //mtx.unlock();
+            // mtx.unlock();
+            iddocIs=true;
             break;
-        };
+        };     
         
-        if (entryIs != true)
+        if (iddocIs==false)
         {
             Entry entryV;
             entryV.doc_id = nDoc;
             entryV.count = 1;
-            std::vector<Entry> vecEntry;
+            
             vecEntry.push_back(entryV);
+            // std::mutex mtx;
+            // mtx.lock();
+            //dictionary->at(newW)=vecEntry;
             freq_dictionary[newW]=vecEntry;
+            // mtx.unlock();
+
+            *newWord="";
         };
-        
+        mtx.unlock();
+
         *newWord="";
     };
     
@@ -76,8 +114,9 @@
     void InvertedIndex::UpdateDocumentBase(std::vector<std::string> list_docs)
     {   
         docs.clear();
-        size_t nDoc=0;
-        for (auto i : list_docs) //  list line in docs
+        //size_t nDoc=0;
+        //for (auto i : list_docs) //  list line in docs
+        for (auto i = 0; i <  list_docs.size(); i++) //  list line in docs
         {
             // //nDoc++;
             // //std::vector<std::string> doc;
@@ -103,41 +142,53 @@
 
             // file.close();
 
-            docs.push_back(i);
+            docs.push_back(list_docs[i]);
 
         }; // end name
+
+        // log out
+        //outContentDocs();
+
         //return;
     };
 
-
-    void InvertedIndex::indexD(std::string line, size_t i)    
+    void InvertedIndex::indexD(const std::string* line, size_t i)    
     {
                 int words=0;
                 std::string newWord = "";
-                //std::cout << line << std::endl;
-                for (auto k : line) // selecting characters in a string
-                {
-                    // wordPlus(&newWord, i);
-                    // if (newWord.size()>=100)
-                    // {                    //     //newWord="";
-                    //     wordPlus(&newWord, i);
-                    //     words++;                    // };
 
-                    //if (islower(k))
+                // log out
+                //setlocale(LC_ALL, "en");
+                // setlocale(LC_ALL, "");
+                // std::cout << "Str. -1: " << *line << std::endl;
+
+                //for (auto k : line) // selecting characters in a string
+                //{
+                char k = ' ';
+                for (size_t n = 0; n < line->size(); n++)
+                {
+                    k=line->at(n);
+                    
                     //if (((k>='A')&(k<='Z')) || ((k>='a')&(k<='z')))
-                    if ((k>='a')&&(k<='z'))
+                    //if ((k>='a') & (k<='z'))
+                    if (islower(k))
                     {
                         newWord=newWord + k;
+
+                        // log out
+                        // std::cout << n << ") " << k << std::endl;
+
                         continue;
                     } else {
                         //std::cout << k << std::endl;
                     };
-                    
+
                     if (newWord.size()<1)
                     {
                         continue;
                     // } else if ((!islower(k)) && (newWord.size()>0))
                     };
+
                     if(newWord.size()>100)
                     {
                         std::cout << "Doc " << i << ". The word length is more than 100 characters.\n";  
@@ -146,21 +197,25 @@
                         continue;
                     };
                    
-                    words++;       
-                    //std::cout << newWord << std::endl; 
-
-                    std::mutex mtx;
-                    mtx.lock();
+                    words++;   
+                    
+                    // std::mutex mtx;
+                    // mtx.lock();
                     wordPlus(&newWord, i);
-                    mtx.unlock();
+                    //mtx.unlock();
 
                     newWord=""; 
                     if (words==1000)
                     {                        
                         break;
-                    };                                   
-                              
-                }; // end line
+                    };        
+                };
+                // end line
+
+                // log out
+                //std::cout << std::endl;
+                // log out
+                //std::cout << newWord << std::endl;   
 
                 if (newWord.size()>0)
                 {
@@ -184,6 +239,25 @@
                     std::cout << "Doc " << i << ". The number of words has reached " << words << ".\n";
                 };
         //return 1;
+    };
+
+    void InvertedIndex::outContentDocs()
+    {
+        setlocale(LC_ALL, "");
+        //std::wcout << L"Привет мир!" << std::endl;
+        //for (size_t i = 0; i < freq_dictionary.size(); i++)
+        // for (const auto& [word, entries] : docs)        
+        for (const auto& line : docs)        
+        {
+            //std::map mp=freq_dictionary[i];
+            //std::vector<entry> vec=entries;
+            // for (auto entryV : entries)
+            // {
+                // std::cout << word << ": " << entryV.doc_id << " - " << entryV.count << "\n";
+                // //std::wcout << word << ": " << entryV.doc_id << " - " << entryV.count << std::endl;
+                std::cout << line << std::endl;
+            // };          
+        };
     };
 
     void InvertedIndex::outContentFreqDictionary()
@@ -215,22 +289,9 @@
                 swapped = false;
                 for (size_t j = 0; j < vec.size() - k - 1; j++)
                 {
-                    if (vec[j].count < vec[j + 1].count) 
+                    if (vec[j].count > vec[j + 1].count) 
                     {
-                        // Entry entryT;
-                        // //Entry entryT,entryJ,entryJ1;
-                        // //std::swap(entries[j], entries[j + 1]);
-                        // entryT.doc_id =vec[j].doc_id;
-                        // entryT.count =vec[j].count;
-
-                        // vec[j].doc_id =vec[j+1].doc_id;
-                        // vec[j].count =vec[j+1].count;
-
-                        // vec[j+1].doc_id =entryT.doc_id;
-                        // vec[j+1].count =entryT.count;
-
                         std::swap(vec[j], vec[j + 1]);
-
                         swapped = true;
                     };
                 };
@@ -245,36 +306,26 @@
 
     void InvertedIndex::indexingDocs()    
     {   
-        // for (size_t i = 0; i < docs.size(); i++)
-        // {
-        //     std::string line=docs[i];            
-        //     std::thread th(indexD, line, i);
-        //     //indexD(line,i);
-        // };
-        
-        // for (size_t i = 0; i < docs.size(); i++)
-        // {
-        //     if (th.joinable()){th.join();};
+        // std::vector<std::thread> threads;  
+        // for (int i = 0; i < docs.size(); i++) 
+        // {  
+        //     std::string line=docs[i];
+        //     threads.emplace_back([&](){ indexD(&line, i); });
+        // }; 
+        // // Дождаться завершения всех потоков  
+        // for (auto &thread : threads) 
+        // {  
+        //     thread.join();  
         // };
 
-        std::vector<std::thread> threads;  
-        
-        // std::vector<int> results(docs.size());  
-        for (int i = 0; i < docs.size(); ++i) {  
-            //int start = i * chunk_size;  
-            //int end = (i + 1) * chunk_size;  
-            // threads.emplace_back([&arr, start, end, &results, i]() {  
-            //     results[i] = sum(arr, start, end);              // });
-            std::string line=docs[i];
-            //threads.emplace_back(indexD(line, i));
-            threads.emplace_back([&](){ indexD(line, i); });
-        };  
-
-        // Дождаться завершения всех потоков  
-        for (auto &thread : threads) 
+        for (int i = 0; i < docs.size(); i++) 
         {  
-            thread.join();  
-        };
+            std::string line=docs[i];
+            indexD(&line, i);
+        }; 
+
+        // log out
+        outContentDocs();
 
         sortingDict();
         

@@ -32,7 +32,8 @@ public:
     //void UpdateDocumentBase(std::vector<std::string> input_docs);
     void UpdateDocumentBase(std::vector<std::string>);
 
-    void indexD(std::string, size_t);
+    void indexD(const std::string*, size_t);
+    void outContentDocs();
     void outContentFreqDictionary();
     void sortingDict();
     void indexingDocs();
