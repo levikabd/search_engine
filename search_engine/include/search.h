@@ -4,6 +4,9 @@
 #include <vector>
 #include <map>
 
+#include <thread>
+#include <mutex>
+
 struct Entry
 {
     size_t doc_id, count;
@@ -20,10 +23,30 @@ class InvertedIndex
 private:
     std::vector<std::string> docs; // список содержимого документов
     //std::vector<std::vector<std::string>> docs; // список содержимого документов
+
+    std::mutex mtx;
     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
 public:
     //InvertedIndex();    
     InvertedIndex() = default;    
+
+    //InvertedIndex & operator = (InvertedIndex &&) = default;  
+    // bool operator == (const InvertedIndex& invertedIndex) const
+    // {
+    //     //return docs == invertedIndex.docs;
+    //     return freq_dictionary == invertedIndex.freq_dictionary;
+    // }
+
+    InvertedIndex& operator=(const InvertedIndex& invertedIndex)
+    {
+        if(&invertedIndex != this)
+        {
+            docs            = invertedIndex.docs;
+            freq_dictionary = invertedIndex.freq_dictionary;
+        }
+        return *this;
+    }
+
     void wordPlus(std::string*, size_t);
 
 

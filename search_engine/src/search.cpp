@@ -26,6 +26,8 @@
 // private:
 //     std::vector<std::string> docs; // список содержимого документов
 //     //std::vector<std::vector<std::string>> docs; // список содержимого документов
+
+//     std::mutex mtx;
 //     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
 // public:
     // InvertedIndex() = default;
@@ -38,9 +40,9 @@
         // log out
         //std::cout << newW << std::endl;
 
-        std::mutex mtx;
+        //std::mutex mtx;
         mtx.lock();
-        std::map<std::string, std::vector<Entry>>* dictionary=&freq_dictionary;
+        //std::map<std::string, std::vector<Entry>>* dictionary=&freq_dictionary;
         //std::vector<Entry> vecEntry = dictionary->at(newW);
         std::vector<Entry> vecEntry = freq_dictionary[newW];
         //for (auto e : entry)
@@ -306,23 +308,23 @@
 
     void InvertedIndex::indexingDocs()    
     {   
-        // std::vector<std::thread> threads;  
-        // for (int i = 0; i < docs.size(); i++) 
-        // {  
-        //     std::string line=docs[i];
-        //     threads.emplace_back([&](){ indexD(&line, i); });
-        // }; 
-        // // Дождаться завершения всех потоков  
-        // for (auto &thread : threads) 
-        // {  
-        //     thread.join();  
-        // };
-
+        std::vector<std::thread> threads;  
         for (int i = 0; i < docs.size(); i++) 
         {  
             std::string line=docs[i];
-            indexD(&line, i);
+            threads.emplace_back([&](){ indexD(&line, i); });
         }; 
+        // Дождаться завершения всех потоков  
+        for (auto &thread : threads) 
+        {  
+            thread.join();  
+        };
+
+        // for (int i = 0; i < docs.size(); i++) 
+        // {  
+        //     std::string line=docs[i];
+        //     indexD(&line, i);
+        // }; 
 
         // log out
         outContentDocs();
@@ -340,7 +342,6 @@
     {
         std::vector<Entry> wordEntry;
         wordEntry = freq_dictionary[word];
-
         return wordEntry;        
     };
 
