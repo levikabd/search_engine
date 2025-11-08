@@ -7,6 +7,13 @@
 #include <thread>
 #include <mutex>
 
+
+struct EntryC
+{
+    std::string word;
+    size_t     doc_id;    
+};
+
 struct Entry
 {
     size_t doc_id, count;
@@ -24,8 +31,11 @@ private:
     std::vector<std::string> docs; // список содержимого документов
     //std::vector<std::vector<std::string>> docs; // список содержимого документов
 
-    std::mutex mtx;
+    std::mutex _mtx;
     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
+
+    //std::mutex mtxC;
+    std::vector<EntryC> collection; // частотный словарь
 public:
     //InvertedIndex();    
     InvertedIndex() = default;    
@@ -47,15 +57,18 @@ public:
         return *this;
     }
 
-    void wordPlus(std::string*, size_t);
+    //void wordPlus(std::string*, size_t);
+    void wordPlus(std::string, size_t);
+    void organizeCollection();
 
+    void wordPlusC(std::string, size_t);
 
 //     // * Обновить или заполнить базу документов, по которой будем совершать поиск
 //     // * @param texts_input содержимое документов
     //void UpdateDocumentBase(std::vector<std::string> input_docs);
     void UpdateDocumentBase(std::vector<std::string>);
 
-    void indexD(const std::string*, size_t);
+    void indexD(const std::string, size_t);
     void outContentDocs();
     void outContentFreqDictionary();
     void sortingDict();

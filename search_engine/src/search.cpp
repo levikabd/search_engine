@@ -11,6 +11,14 @@
 
 #include "../include/search.h"
 
+//std::mutex _mtx;
+
+// struct EntryC
+// {
+//     std::string word;
+//     size_t     doc_id;    
+// };
+
 // struct Entry 
 // {
 //     size_t doc_id, count;
@@ -29,19 +37,25 @@
 
 //     std::mutex mtx;
 //     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
+//    std::mutex mtxC;
+//    std::vector<EntryC> collection; // частотный словарь
 // public:
     // InvertedIndex() = default;
 
-    //void wordPlus(std::vector<Entry> vecEntry, std::string newWord)
-    void InvertedIndex::wordPlus(std::string* newWord, size_t nDoc)
+
+   //void wordPlus(std::vector<Entry> vecEntry, std::string newWord)
+    //void InvertedIndex::wordPlus(std::string* newWord, size_t nDoc)
+    void InvertedIndex::wordPlus(std::string newW, size_t nDoc)
     {
-        std::string newW = *newWord;
+        //std::string newW = *newWord;
 
         // log out
         //std::cout << newW << std::endl;
 
         //std::mutex mtx;
-        mtx.lock();
+        //mtx.lock();
+        //std::lock_guard<std::mutex> lock(mtx);
+        
         //std::map<std::string, std::vector<Entry>>* dictionary=&freq_dictionary;
         //std::vector<Entry> vecEntry = dictionary->at(newW);
         std::vector<Entry> vecEntry = freq_dictionary[newW];
@@ -59,14 +73,15 @@
             //dictionary->at(newW)=vecEntry;
             freq_dictionary[newW]=vecEntry;
             // mtx.unlock();
-            mtx.unlock();
-            *newWord="";
+            //mtx.unlock();
+            //*newWord="";
             
             return;
         };
         
         // std::mutex mtx;
         // mtx.lock();
+        //std::lock_guard<std::mutex> lock(mtx);
         bool iddocIs = false;
         for (int n=0; n<vecEntry.size(); n++)
         {
@@ -91,6 +106,7 @@
             break;
         };     
         
+        //std::lock_guard<std::mutex> lock(mtx);
         if (iddocIs==false)
         {
             Entry entryV;
@@ -104,13 +120,36 @@
             freq_dictionary[newW]=vecEntry;
             // mtx.unlock();
 
-            *newWord="";
+            //*newWord="";
         };
-        mtx.unlock();
+        
+        //mtx.unlock();
 
-        *newWord="";
+        //*newWord="";
     };
-    
+
+    void InvertedIndex::organizeCollection()
+    {
+        for (size_t i = 0; i < collection.size(); i++)
+        {
+            wordPlus( collection[i].word, collection[i].doc_id);
+            //EntryC newEntr{collection[i].word, collection[i].doc_id};            
+        }       
+        collection.clear();
+    };
+
+    void InvertedIndex::wordPlusC(std::string newWord, size_t nDoc)
+    {
+        EntryC newEntr{newWord, nDoc};
+
+        //std::lock_guard<std::mutex> lock(mtxC);
+        _mtx.lock();
+        collection.push_back(newEntr); 
+        _mtx.unlock();  
+        
+    };
+
+   
     // * Обновить или заполнить базу документов, по которой будем совершать поиск+
     // * @param texts_input содержимое документов
     void InvertedIndex::UpdateDocumentBase(std::vector<std::string> list_docs)
@@ -154,7 +193,7 @@
         //return;
     };
 
-    void InvertedIndex::indexD(const std::string* line, size_t i)    
+    void InvertedIndex::indexD(const std::string line, size_t i)    
     {
                 int words=0;
                 std::string newWord = "";
@@ -167,9 +206,9 @@
                 //for (auto k : line) // selecting characters in a string
                 //{
                 char k = ' ';
-                for (size_t n = 0; n < line->size(); n++)
+                for (size_t n = 0; n < line.size(); n++)
                 {
-                    k=line->at(n);
+                    k=line.at(n);
                     
                     //if (((k>='A')&(k<='Z')) || ((k>='a')&(k<='z')))
                     //if ((k>='a') & (k<='z'))
@@ -199,14 +238,14 @@
                         continue;
                     };
                    
-                    words++;   
-                    
+                    words++;                       
                     // std::mutex mtx;
                     // mtx.lock();
-                    wordPlus(&newWord, i);
+                    //wordPlusC(&newWord, i);
+                    wordPlusC(newWord, i);
+                    newWord="";
                     //mtx.unlock();
 
-                    newWord=""; 
                     if (words==1000)
                     {                        
                         break;
@@ -232,7 +271,8 @@
                         //return;
                     } else
                     {
-                        wordPlus(&newWord, i); 
+                        wordPlusC(newWord, i); 
+                        newWord="";
                     };                                
                 };                
                 
@@ -312,7 +352,8 @@
         for (int i = 0; i < docs.size(); i++) 
         {  
             std::string line=docs[i];
-            threads.emplace_back([&](){ indexD(&line, i); });
+            threads.emplace_back([&](){ indexD(line, i); });
+            //threads.emplace_back([&](){ indexD(&line, i); });
         }; 
         // Дождаться завершения всех потоков  
         for (auto &thread : threads) 
@@ -323,8 +364,11 @@
         // for (int i = 0; i < docs.size(); i++) 
         // {  
         //     std::string line=docs[i];
-        //     indexD(&line, i);
+        //     indexD(line, i);
         // }; 
+        //
+
+        organizeCollection();
 
         // log out
         outContentDocs();

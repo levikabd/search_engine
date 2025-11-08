@@ -19,6 +19,8 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
+set(enable-threads posix)
+
 add_executable(
   hello_test
   test.cpp 
