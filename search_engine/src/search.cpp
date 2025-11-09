@@ -11,7 +11,6 @@
 
 #include "../include/search.h"
 
-//std::mutex _mtx;
 
 // struct EntryC
 // {
@@ -38,6 +37,7 @@
 //     std::mutex mtx;
 //     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
 //    std::mutex mtxC;
+    //bool coll_locked = false;
 //    std::vector<EntryC> collection; // частотный словарь
 // public:
     // InvertedIndex() = default;
@@ -138,15 +138,28 @@
         collection.clear();
     };
 
+    void InvertedIndex::locker()
+    {
+        while (coll_locked)
+        {
+            std::this_thread::sleep_for(std::chrono::microseconds(1000));
+        };
+        coll_locked=true;
+    };
+
     void InvertedIndex::wordPlusC(std::string newWord, size_t nDoc)
     {
         EntryC newEntr{newWord, nDoc};
 
         //std::lock_guard<std::mutex> lock(mtxC);
-        _mtx.lock();
+        //_mtx.lock();
+        locker();
+        std::cout << newWord << std::endl;
         collection.push_back(newEntr); 
-        _mtx.unlock();  
-        
+        // std::cout << collection.back().word << " - " << collection.back().doc_id << std::endl;
+        //_mtx.unlock();  
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        coll_locked=false;        
     };
 
    

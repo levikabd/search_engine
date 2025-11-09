@@ -29,12 +29,11 @@ class InvertedIndex
 {
 private:
     std::vector<std::string> docs; // список содержимого документов
-    //std::vector<std::vector<std::string>> docs; // список содержимого документов
-
-    std::mutex _mtx;
+    
     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
 
     //std::mutex mtxC;
+    bool coll_locked = false;
     std::vector<EntryC> collection; // частотный словарь
 public:
     //InvertedIndex();    
@@ -61,6 +60,7 @@ public:
     void wordPlus(std::string, size_t);
     void organizeCollection();
 
+    void locker();
     void wordPlusC(std::string, size_t);
 
 //     // * Обновить или заполнить базу документов, по которой будем совершать поиск
