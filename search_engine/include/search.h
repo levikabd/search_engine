@@ -32,8 +32,7 @@ private:
     
     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
 
-    //std::mutex mtxC;
-    bool coll_locked = false;
+    std::mutex mtxC;
     std::vector<EntryC> collection; // частотный словарь
 public:
     //InvertedIndex();    
@@ -60,7 +59,7 @@ public:
     void wordPlus(std::string, size_t);
     void organizeCollection();
 
-    void locker();
+    //void locker();
     void wordPlusC(std::string, size_t);
 
 //     // * Обновить или заполнить базу документов, по которой будем совершать поиск
@@ -68,7 +67,9 @@ public:
     //void UpdateDocumentBase(std::vector<std::string> input_docs);
     void UpdateDocumentBase(std::vector<std::string>);
 
-    void indexD(const std::string, size_t);
+    //void indexD(const std::string, size_t);
+    
+    void indexD(int);
     void outContentDocs();
     void outContentFreqDictionary();
     void sortingDict();

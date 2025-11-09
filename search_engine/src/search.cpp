@@ -138,30 +138,24 @@
         collection.clear();
     };
 
-    void InvertedIndex::locker()
-    {
-        while (coll_locked)
-        {
-            std::this_thread::sleep_for(std::chrono::microseconds(1000));
-        };
-        coll_locked=true;
-    };
+    // void InvertedIndex::locker()
+    // {
+    //     while (coll_locked)
+    //     {
+    //         std::this_thread::sleep_for(std::chrono::microseconds(1000));
+    //     };
+    //     coll_locked=true;
+    // };
 
     void InvertedIndex::wordPlusC(std::string newWord, size_t nDoc)
     {
+        // log out
+        //std::cout << newWord << std::endl;
+        
         EntryC newEntr{newWord, nDoc};
-
-        //std::lock_guard<std::mutex> lock(mtxC);
-        //_mtx.lock();
-        locker();
-        std::cout << newWord << std::endl;
+        std::lock_guard<std::mutex> lock(mtxC);       
         collection.push_back(newEntr); 
-        // std::cout << collection.back().word << " - " << collection.back().doc_id << std::endl;
-        //_mtx.unlock();  
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
-        coll_locked=false;        
     };
-
    
     // * Обновить или заполнить базу документов, по которой будем совершать поиск+
     // * @param texts_input содержимое документов
@@ -206,29 +200,29 @@
         //return;
     };
 
-    void InvertedIndex::indexD(const std::string line, size_t i)    
+    //void InvertedIndex::indexD(const std::string line, size_t i)    
+    void InvertedIndex::indexD(int i)    
     {
+                // log out              
+                //std::cout  << "doc.num.: " << i << std::endl;
+
+                std::string line = docs.at(i);
                 int words=0;
                 std::string newWord = "";
 
                 // log out
-                //setlocale(LC_ALL, "en");
                 // setlocale(LC_ALL, "");
-                // std::cout << "Str. -1: " << *line << std::endl;
+                // std::cout << "Str. -1: " << line << std::endl;
 
-                //for (auto k : line) // selecting characters in a string
-                //{
                 char k = ' ';
                 for (size_t n = 0; n < line.size(); n++)
                 {
                     k=line.at(n);
-                    
-                    //if (((k>='A')&(k<='Z')) || ((k>='a')&(k<='z')))
                     //if ((k>='a') & (k<='z'))
                     if (islower(k))
                     {
                         newWord=newWord + k;
-
+                        
                         // log out
                         // std::cout << n << ") " << k << std::endl;
 
@@ -361,14 +355,29 @@
 
     void InvertedIndex::indexingDocs()    
     {   
-        std::vector<std::thread> threads;  
+        // log out
+        //std::cout << "size: " << docs.size() << std::endl;
+
+        std::vector<std::thread> threads; 
+        // //std::string line=""; 
         for (int i = 0; i < docs.size(); i++) 
         {  
-            std::string line=docs[i];
-            threads.emplace_back([&](){ indexD(line, i); });
+            //line=docs[i];
+            // log out 
+            //std::cout << line << std::endl;
+            // std::thread nthread(indexD, i);
+            //std::thread nthread([&](int b) {indexD(b);}, i);
+            threads.emplace_back([&](int b) {indexD(b);}, i);
+
+            //threads.emplace_back(nthread);
+
+            //threads.emplace_back([&](int i){ indexD(i);});
             //threads.emplace_back([&](){ indexD(&line, i); });
+            // std::thread thr(indexD(), i);
+            // threads.push_back(thr);
+
+            //threads.push_back(std::thread(indexD(i),i));
         }; 
-        // Дождаться завершения всех потоков  
         for (auto &thread : threads) 
         {  
             thread.join();  
@@ -376,11 +385,9 @@
 
         // for (int i = 0; i < docs.size(); i++) 
         // {  
-        //     std::string line=docs[i];
-        //     indexD(line, i);
+        //     indexD(i);
         // }; 
-        //
-
+        
         organizeCollection();
 
         // log out
@@ -389,7 +396,7 @@
         sortingDict();
         
         // log out
-        outContentFreqDictionary();
+        //outContentFreqDictionary();
     };
 
     // * Метод определяет количество вхождений слова word в загруженной базе документов
